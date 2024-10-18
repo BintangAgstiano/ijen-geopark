@@ -1,6 +1,6 @@
 window.addEventListener('scroll', function () {
     const section1 = document.querySelector('.section1');
-    if (window.scrollY > 50) { // Ketika scroll lebih dari 50px
+    if (window.scrollY > 100) { // Ketika scroll lebih dari 50px
         section1.classList.add('scrolled');
     } else {
         section1.classList.remove('scrolled');
@@ -78,7 +78,7 @@ function incrementAngka2() {
 incrementAngka2()
 
 setInterval(() => {
-    
+
     incrementAngka2()
     index2 = 0
 }, 1500);
@@ -123,16 +123,16 @@ boxes.forEach((box, index) => {
 // Fungsi untuk mengubah kotak aktif
 function changeActiveBox() {
     // Nonaktifkan kotak sebelumnya
-    boxes[activeIndex].classList.remove('active'); 
+    boxes[activeIndex].classList.remove('active');
 
     // Update gambar untuk kotak sebelumnya
     boxes[activeIndex].style.backgroundImage = `url(${images[activeIndex]})`;
 
     // Update indeks untuk kotak berikutnya
-    activeIndex = (activeIndex + 1) % boxes.length; 
+    activeIndex = (activeIndex + 1) % boxes.length;
 
     // Aktifkan kotak baru
-    boxes[activeIndex].classList.add('active'); 
+    boxes[activeIndex].classList.add('active');
 
     // Update gambar untuk semua kotak
     boxes.forEach((box, index) => {
@@ -181,12 +181,12 @@ document.addEventListener('DOMContentLoaded', function () {
         // Tampilkan pesan jika semua berita tersembunyi
         if (beritaTersembunyi === cards.length) {
             colTidakAdaBerita.style.display = 'flex'; // Tampilkan pesan tidak ada berita
-            colCard.style.justifyContent='center'
-            colCard.style.marginTop='100px'
+            colCard.style.justifyContent = 'center'
+            colCard.style.marginTop = '100px'
         } else {
             colTidakAdaBerita.style.display = 'none'; // Sembunyikan pesan jika ada berita yang ditampilkan
-            colCard.style.justifyContent='start'
-            colCard.style.marginTop='0px'
+            colCard.style.justifyContent = 'start'
+            colCard.style.marginTop = '0px'
 
         }
     });
