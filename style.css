@@ -8,9 +8,11 @@
     font-family: poppins;
     scroll-behavior: smooth;
 }
-.sidebar{
+
+.sidebar {
     display: none;
 }
+
 .section1 {
     display: flex;
     justify-content: center;
@@ -280,7 +282,7 @@
 }
 
 .left4 {
-    width: 50%;
+    width: 35%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -290,12 +292,12 @@
 }
 
 .right4 {
-    width: 50%;
+    width: 65%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 300px;
+    padding-left: 800px;
     gap: 20px;
     overflow-x: hidden;
 }
@@ -304,6 +306,7 @@
     font-size: 1rem;
     color: #2F3A0B;
     margin-bottom: 10px;
+    margin-top: -30px;
 }
 
 .deskripsi4 {
@@ -335,7 +338,7 @@
     font-weight: 550;
 }
 
-.box-right4.active {
+/* .box-right4.active {
     width: 300px;
     height: 500px;
     overflow: hidden;
@@ -344,18 +347,55 @@
     background-image: url(assets/fenomena-api-biru-di-kawah-ijen-apakah-berbahaya-xtw\ 1.png);
     background-size: cover;
     position: relative;
-}
+} */
 
 .box-right4 {
     position: relative;
     width: 280px;
     height: 350px;
-    background-color: transparent;
-    background-image: url(assets/kawahwurung.jpg);
-    background-size: cover;
-    border-radius: 10px;
+    border-radius: 5px;
     overflow: hidden;
-    position: relative;
+    cursor: pointer;
+}
+
+.box-right4:hover .col-btn-box4-footer {
+    opacity: 1;
+    visibility: visible;
+    margin-bottom: 38px;
+}
+
+.box-right4.first-card .col-btn-box4-footer {
+    opacity: 1;
+    visibility: visible;
+    margin-bottom: 38px;
+}
+
+.box-right4 .thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-position: center;
+}
+
+.box-right4.first-card {
+    order: 1;
+    height: 430px;
+}
+
+.box-right4.second-card {
+    order: 2;
+}
+
+.box-right4.third-card {
+    order: 3;
+}
+
+.box-right4.for-card {
+    order: 4;
+}
+
+.box-right4.five-card {
+    order: 5;
 }
 
 .bg-shadow {
@@ -367,7 +407,6 @@
     background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, .6), transparent);
 }
 
-
 .parent-box4 {
     display: flex;
     flex-wrap: nowrap;
@@ -377,6 +416,7 @@
     gap: 20px;
     margin-left: 80px;
     width: max-content;
+    transition: .3s;
 }
 
 .plus {
@@ -405,36 +445,25 @@
 
 .col-btn-box4-footer {
     display: flex;
-    /* Ubah ke flex jika aktif */
     justify-content: center;
     align-items: center;
     width: max-content;
     height: 30px;
     gap: 10px;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    /* Tambahkan transisi untuk opacity dan visibility */
+    transition: .3s;
     opacity: 0;
-    /* Mulai dengan opacity 0 */
     visibility: hidden;
-    /* Mulai dengan visibility hidden */
-}
-
-.col-btn-box4-footer.active {
-    opacity: 1;
-    /* Opacity penuh saat aktif */
-    visibility: visible;
-    /* Pastikan tombol terlihat saat aktif */
 }
 
 .col-btn-box4-footer button {
     background-color: transparent;
     color: white;
     border: 1px solid white;
-    border-radius: 50px;
+    border-radius: 100px;
     width: 200px;
-    height: 100%;
     font-size: .8rem;
     font-weight: 200;
+    padding: 8px 0;
     cursor: pointer;
 }
 
@@ -545,6 +574,7 @@
     min-height: 100px;
     display: flex;
     justify-content: start;
+    flex-wrap: wrap;
     gap: 50px;
     align-items: center;
     margin-top: 20px;
@@ -575,6 +605,8 @@
 
 .header img {
     width: 100%;
+    object-fit: cover;
+    object-position: top;
     height: 100%;
 }
 
@@ -787,7 +819,7 @@
     height: 100%;
     background-color: gray;
     position: relative;
-    background-image: url(assets/fenomena-api-biru-di-kawah-ijen-apakah-berbahaya-xtw\ 1.png);
+    background-image: url(assets/blue_fire.jpg);
     background-position-y: -20px;
     background-size: cover;
     overflow: hidden;
@@ -937,7 +969,6 @@
 }
 
 .right-galeri {
-
     width: 70%;
     height: 100%;
     display: flex;
@@ -1206,7 +1237,7 @@
     width: 100%;
     height: max-content;
     background-color: rgb(0, 0, 0);
-    background-image: url(../assets/bg-footer.png);
+    background-image: url(assets/bg-footer.png);
     background-size: cover;
 }
 
@@ -1390,9 +1421,10 @@
     }
 
     .col-link {
- display: none;
+        display: none;
     }
-    .sidebar{
+
+    .sidebar {
         display: flex;
         width: 100%;
         position: fixed;
@@ -1400,13 +1432,14 @@
         overflow: hidden;
         background-color: #202707;
 
-       top: -100%;
-       left: 0;
-       z-index: -1;
-       flex-direction: column;
-       transition: .5s;
+        top: -100%;
+        left: 0;
+        z-index: -1;
+        flex-direction: column;
+        transition: .5s;
     }
-    .sidebar.active{
+
+    .sidebar.active {
         display: flex;
         width: 100%;
         position: fixed;
@@ -1414,12 +1447,13 @@
         overflow: hidden;
         background-color: #202707;
         z-index: 999999;
-       top: 0;
-       left: 0;
-       flex-direction: column;
-       transition: .5s;
+        top: 0;
+        left: 0;
+        flex-direction: column;
+        transition: .5s;
     }
-    .header-sidebar{
+
+    .header-sidebar {
         width: 100%;
         height: 70px;
         border-bottom: 1px solid rgba(128, 128, 128, 0.329);
@@ -1430,18 +1464,21 @@
         background-color: #202707;
         gap: 5px;
     }
-    .header-sidebar i{
+
+    .header-sidebar i {
         font-size: 2rem;
         color: #ffffff;
-        
-    
+
+
     }
-    .header-sidebar span{
+
+    .header-sidebar span {
         font-size: 1.2rem;
         color: white;
         font-weight: 500;
     }
-    .content1-sidebar{
+
+    .content1-sidebar {
         width: 100%;
         height: max-content;
         display: flex;
@@ -1450,7 +1487,8 @@
         gap: 10px;
         margin-top: 30px;
     }
-    .col-link-sidebar{
+
+    .col-link-sidebar {
         width: 100%;
         height: max-content;
         display: flex;
@@ -1459,7 +1497,8 @@
         margin-left: 5px;
         margin-top: 30px;
     }
-    .col-link-sidebar a{
+
+    .col-link-sidebar a {
         color: #ffffff;
         text-decoration: none;
         font-size: 1.1rem;
@@ -1468,10 +1507,12 @@
         gap: 10px;
         font-weight: 200;
     }
-    .col-link-sidebar a i{
+
+    .col-link-sidebar a i {
         font-weight: 200 !important;
     }
-    .col-btn-sidebar{
+
+    .col-btn-sidebar {
         display: flex;
         align-items: center;
         gap: 20px;
@@ -1479,6 +1520,7 @@
         width: 100%;
         margin-top: 40px;
     }
+
     .login-sidebar {
         padding: 7px 35px;
         border-radius: 5px;
@@ -1492,7 +1534,7 @@
         align-items: center;
         overflow: hidden;
     }
-    
+
     .navbar {
         padding: 0 30px;
     }
@@ -1528,6 +1570,7 @@
 
     .right4 {
         width: 100%;
+        padding-left: 610px;
 
     }
 
@@ -1625,6 +1668,7 @@
         transition: .8s;
 
     }
+
     .left-header-galeri:hover {
         width: 100%;
         height: 300px;
@@ -1642,6 +1686,7 @@
         transition: .8s;
 
     }
+
     .right-header-galeri:hover {
         width: 100%;
         width: 100%;
@@ -1649,7 +1694,10 @@
         background-size: cover;
         background-position-y: 0 !important;
     }
-    .box-decoration,.box-decoration2,.box-decoration3 {
+
+    .box-decoration,
+    .box-decoration2,
+    .box-decoration3 {
         position: absolute;
         transition: .5s;
         width: 800px;
@@ -1660,9 +1708,10 @@
         top: -80px;
         background-color: white;
         opacity: .08;
-    
+
     }
-    .box-decoration4{
+
+    .box-decoration4 {
         position: absolute;
         transition: .5s;
         width: 800px;
@@ -1674,6 +1723,7 @@
         background-color: white;
         opacity: .08;
     }
+
     .content-footer {
         width: 100%;
         max-width: 1520px;
@@ -1686,23 +1736,25 @@
         flex-wrap: wrap;
         align-items: center;
         gap: 80px;
-    
+
     }
+
     .content-footer {
         height: max-content !important;
     }
-    
+
     .box-footer {
         width: 350px;
         margin-top: 80px;
         margin-bottom: -50px;
         font-size: .8rem;
     }
+
     .box-footer a img {
         margin-bottom: -30px;
         margin-top: -30px;
     }
-    
+
     .kumpulan-footer {
         gap: 55px;
         display: flex;
@@ -1711,14 +1763,17 @@
         width: 100%;
         flex-wrap: wrap;
     }
-    .title-footer{
+
+    .title-footer {
         font-size: 1.3rem !important;
     }
-    .title-footer{
+
+    .title-footer {
         margin-bottom: 20px !important;
     }
 
 }
+
 @media(min-width:735px) and (max-width:1202px) {
     .content3 {
         padding: 0 80px;
@@ -1726,39 +1781,47 @@
         padding-top: 80px;
         height: max-content;
     }
-    .left3{
+
+    .left3 {
         width: 100%;
         padding-left: 0;
     }
-    .right3{
+
+    .right3 {
         width: 100%;
         padding-left: 0;
         margin-top: 30px;
     }
-    
+
     .right3 img {
         width: 600px;
     }
+
     .content4 {
         padding: 0 80px;
         flex-direction: column;
         padding-top: 80px;
         height: max-content;
     }
-    .left4{
+
+    .left4 {
         width: 100%;
         padding-left: 0;
     }
-    .deskripsi4{
+
+    .deskripsi4 {
         /* width: 100%; */
     }
-    .right4{
+
+    .right4 {
         width: 100%;
         margin-top: 80px;
     }
-    .parent-box4{
+
+    .parent-box4 {
         margin-left: 0;
     }
+
     .content5 {
         padding: 0 80px;
         padding-top: 80px;
@@ -1780,7 +1843,8 @@
     .col-card {
         flex-wrap: wrap;
     }
- .content6 {
+
+    .content6 {
         padding: 0 30px;
         padding-top: 80px;
         height: max-content;
@@ -1848,6 +1912,7 @@
         transition: .8s;
 
     }
+
     .left-header-galeri:hover {
         width: 100%;
         height: 300px;
@@ -1865,6 +1930,7 @@
         transition: .8s;
 
     }
+
     .right-header-galeri:hover {
         width: 100%;
         width: 100%;
@@ -1872,7 +1938,10 @@
         background-size: cover;
         background-position-y: 0 !important;
     }
-    .box-decoration,.box-decoration2,.box-decoration3 {
+
+    .box-decoration,
+    .box-decoration2,
+    .box-decoration3 {
         position: absolute;
         transition: .5s;
         width: 800px;
@@ -1883,9 +1952,10 @@
         top: -80px;
         background-color: white;
         opacity: .08;
-    
+
     }
-    .box-decoration4{
+
+    .box-decoration4 {
         position: absolute;
         transition: .5s;
         width: 800px;
@@ -1897,6 +1967,7 @@
         background-color: white;
         opacity: .08;
     }
+
     .content-footer {
         height: max-content !important;
     }
@@ -1919,6 +1990,7 @@
         width: 100%;
         flex-wrap: wrap;
     }
+
     .navbar {
         padding: 0 30px;
     }
@@ -1938,10 +2010,12 @@
         font-weight: 200;
 
     }
-    .col-link{
+
+    .col-link {
         display: none;
     }
-    .sidebar{
+
+    .sidebar {
         display: flex;
         width: 100%;
         position: fixed;
@@ -1949,13 +2023,14 @@
         overflow: hidden;
         background-color: #202707;
 
-       top: -100%;
-       left: 0;
-       z-index: -1;
-       flex-direction: column;
-       transition: .5s;
+        top: -100%;
+        left: 0;
+        z-index: -1;
+        flex-direction: column;
+        transition: .5s;
     }
-    .sidebar.active{
+
+    .sidebar.active {
         display: flex;
         width: 100%;
         position: fixed;
@@ -1963,12 +2038,13 @@
         overflow: hidden;
         background-color: #202707;
         z-index: 999999;
-       top: 0;
-       left: 0;
-       flex-direction: column;
-       transition: .5s;
+        top: 0;
+        left: 0;
+        flex-direction: column;
+        transition: .5s;
     }
-    .header-sidebar{
+
+    .header-sidebar {
         width: 100%;
         height: 70px;
         border-bottom: 1px solid rgba(128, 128, 128, 0.329);
@@ -1979,18 +2055,21 @@
         background-color: #202707;
         gap: 5px;
     }
-    .header-sidebar i{
+
+    .header-sidebar i {
         font-size: 2rem;
         color: #ffffff;
-        
-    
+
+
     }
-    .header-sidebar span{
+
+    .header-sidebar span {
         font-size: 1.2rem;
         color: white;
         font-weight: 500;
     }
-    .content1-sidebar{
+
+    .content1-sidebar {
         width: 100%;
         height: max-content;
         display: flex;
@@ -1999,7 +2078,8 @@
         gap: 10px;
         margin-top: 30px;
     }
-    .col-link-sidebar{
+
+    .col-link-sidebar {
         width: 100%;
         height: max-content;
         display: flex;
@@ -2008,7 +2088,8 @@
         margin-left: 5px;
         margin-top: 30px;
     }
-    .col-link-sidebar a{
+
+    .col-link-sidebar a {
         color: #ffffff;
         text-decoration: none;
         font-size: 1.1rem;
@@ -2017,10 +2098,12 @@
         gap: 10px;
         font-weight: 200;
     }
-    .col-link-sidebar a i{
+
+    .col-link-sidebar a i {
         font-weight: 200 !important;
     }
-    .col-btn-sidebar{
+
+    .col-btn-sidebar {
         display: flex;
         align-items: center;
         gap: 20px;

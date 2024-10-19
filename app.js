@@ -1,6 +1,6 @@
 window.addEventListener('scroll', function () {
     const section1 = document.querySelector('.section1');
-    if (window.scrollY > 100) { // Ketika scroll lebih dari 50px
+    if (window.scrollY > 100) {
         section1.classList.add('scrolled');
     } else {
         section1.classList.remove('scrolled');
@@ -84,73 +84,6 @@ setInterval(() => {
 }, 1500);
 
 
-// Ambil semua elemen .box-right4
-const boxes = document.querySelectorAll('.box-right4');
-let activeIndex = 0;
-
-// Array untuk menyimpan gambar untuk setiap kotak
-const images = [
-    'assets/fenomena-api-biru-di-kawah-ijen-apakah-berbahaya-xtw 1.png', // Gambar kotak 1
-    'assets/kawahwurung.jpg', // Gambar kotak 2
-    'assets/kawahwurung.jpg', // Gambar kotak 3
-];
-
-// Tambahkan event listener untuk setiap box
-boxes.forEach((box, index) => {
-    box.addEventListener('mouseenter', () => {
-        if (index !== 0) { // Hanya untuk box selain kotak pertama
-            const footer = box.querySelector('.col-box4-footer');
-            const button = box.querySelector('.col-btn-box4-footer');
-
-            // Aktifkan footer di kotak yang sedang di hover
-            footer.classList.add('active');
-            button.classList.add('active'); // Tampilkan tombol saat di hover
-        }
-    });
-
-    box.addEventListener('mouseleave', () => {
-        if (index !== 0) { // Hanya untuk box selain kotak pertama
-            const footer = box.querySelector('.col-box4-footer');
-            const button = box.querySelector('.col-btn-box4-footer');
-
-            // Nonaktifkan footer di kotak yang sedang di hover
-            footer.classList.remove('active');
-            button.classList.remove('active'); // Sembunyikan tombol saat tidak di hover
-        }
-    });
-});
-
-// Fungsi untuk mengubah kotak aktif
-function changeActiveBox() {
-    // Nonaktifkan kotak sebelumnya
-    boxes[activeIndex].classList.remove('active');
-
-    // Update gambar untuk kotak sebelumnya
-    boxes[activeIndex].style.backgroundImage = `url(${images[activeIndex]})`;
-
-    // Update indeks untuk kotak berikutnya
-    activeIndex = (activeIndex + 1) % boxes.length;
-
-    // Aktifkan kotak baru
-    boxes[activeIndex].classList.add('active');
-
-    // Update gambar untuk semua kotak
-    boxes.forEach((box, index) => {
-        box.style.backgroundImage = `url(${images[index]})`;
-    });
-
-    // Memindahkan kotak aktif ke posisi paling kiri
-    const frontBox = boxes[activeIndex];
-    const parent = document.querySelector('.parent-box4');
-    parent.prepend(frontBox); // Pindahkan kotak aktif ke depan
-}
-
-// Jalankan fungsi setiap 5 detik
-setInterval(changeActiveBox, 5000);
-
-// Tombol pada kotak pertama tetap aktif saat halaman dimuat
-const firstBoxButton = boxes[0].querySelector('.col-btn-box4-footer');
-firstBoxButton.classList.add('active'); // Pastikan tombol di kotak pertama terlihat
 
 document.addEventListener('DOMContentLoaded', function () {
     const searching = document.querySelector('.searching');
@@ -212,3 +145,34 @@ btnCards.forEach((btnCard) => {
         arcCard.classList.remove('active');
     });
 });
+const alumnis = document.querySelectorAll('.box-right4');
+const parent = document.querySelector(".parent-box4");
+
+if (alumnis.length > 0) {
+    function changePosition() {
+        // parent.style.opacity = "0";
+        alumnis.forEach(alumni => {
+            if (alumni.classList.contains('first-card')) {
+                alumni.classList.replace('first-card', 'five-card');
+            } else if (alumni.classList.contains('second-card')) {
+                alumni.classList.replace('second-card', 'first-card');
+            } else if (alumni.classList.contains('third-card')) {
+                alumni.classList.replace('third-card', 'second-card');
+            }
+            else if (alumni.classList.contains('for-card')) {
+                alumni.classList.replace('for-card', 'third-card');
+            }
+            else if (alumni.classList.contains('five-card')) {
+                alumni.classList.replace('five-card', 'for-card');
+            }
+        });
+
+        setTimeout(() => {
+            parent.style.opacity = "1";
+        }, 300);
+    }
+
+    setInterval(changePosition, 3000);
+}
+
+
